@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f73b215428f8837458f2632f794d96b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 2995496890825897117, guid: fac090e0c40b6b3419f3f010f62f83d8, type: 3}
+  _enemy: {fileID: 2995496890825897117, guid: fac090e0c40b6b3419f3f010f62f83d8, type: 3}
 --- !u!1001 &1017441740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -539,8 +539,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2046778066}
   - component: {fileID: 2046778068}
-  - component: {fileID: 2046778067}
   - component: {fileID: 2046778069}
+  - component: {fileID: 2046778067}
+  - component: {fileID: 2046778070}
   m_Layer: 0
   m_Name: AlarmZone
   m_TagString: Untagged
@@ -575,7 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c58f3197dcf26fd4690dbbbe86f20cd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioSource: {fileID: 2046778068}
+  _alarm: {fileID: 2046778070}
 --- !u!82 &2046778068
 AudioSource:
   m_ObjectHideFlags: 0
@@ -590,13 +591,13 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 2.7263048
+  MinDistance: 0.55302167
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -698,6 +699,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.44790602, y: 0.3620371}
   m_EdgeRadius: 0
+--- !u!114 &2046778070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046778065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894cdb5c1766dcf4993995312fadb2c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSource: {fileID: 2046778068}
+  _detector: {fileID: 2046778067}
 --- !u!1001 &1702735955301050801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -838,6 +853,18 @@ PrefabInstance:
     - target: {fileID: 4558727813050252952, guid: 9dd4593bacac2214e92a769fe2e998dc, type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558727813050252952, guid: 9dd4593bacac2214e92a769fe2e998dc, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558727813050252956, guid: 9dd4593bacac2214e92a769fe2e998dc, type: 3}
+      propertyPath: LayerMask.m_Bits
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558727813050252956, guid: 9dd4593bacac2214e92a769fe2e998dc, type: 3}
+      propertyPath: _layerMask.m_Bits
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4558727813050252959, guid: 9dd4593bacac2214e92a769fe2e998dc, type: 3}
       propertyPath: m_RootOrder
